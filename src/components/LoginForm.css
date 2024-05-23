@@ -1,0 +1,74 @@
+.text-primary {
+    color: #1877F2;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+.card{
+    width: 30rem;
+}
+
+.input-container {
+    width: 26rem;
+    height: 3rem;
+}
+
+.login-button {
+    width: 26rem;
+    height: 2.5rem;
+}
+
+.divider {
+    width: 26rem;
+}
+
+.create-account-button {
+    width: 15rem;
+    height: 2.8rem;
+    background: #42B72A;
+}
+
+@media (max-width: 770px) {
+    .left-col{
+        display: none;  
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+    }
+@media (max-width: 1000px) {
+    .input-container,
+    .login-button,
+    .divider {
+        width: 20rem;
+    }
+
+    .create-account-button {
+        width: 12rem;
+    }
+
+    .col-md-6 {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .input-container,
+    .login-button,
+    .divider {
+        width: 15rem;
+    }
+
+    .create-account-button {
+        width: 10rem;
+        height: auto;
+    }
+
+    .col-md-6 {
+        margin-top: 1rem;
+    }
+}
