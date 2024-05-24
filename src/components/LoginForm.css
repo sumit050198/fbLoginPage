@@ -26,7 +26,16 @@
 .create-account-button {
     width: 15rem;
     height: 2.8rem;
+    /* font-size: 16px; */
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #42B72A;
+    cursor: pointer
+}
+.text-white{
+    margin: 0;
 }
 
 @media (max-width: 770px) {

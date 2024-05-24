@@ -63,8 +63,8 @@ const LoginForm = () => {
                                     <a href="/">Forget Password</a>
                                 </div>
                                 <hr className="mt-3 divider" />
-                                <div className="mb-4 create-account-button d-flex justify-content-center" style={{ background: '#42B72A', cursor: 'pointer' }}>
-                                    <p className="text-white mt-2 justify-content-cente align-items-center"> create account button</p>
+                                <div className="create-account-button my-4">
+                                    <p className="text-white"> create account button</p>
                                 </div>
                                 {/* <button className="btn text-white mb-4 create-account-button" style={{ background: '#42B72A' }}> create-account-button</button> */}
                             </div>
@@ -77,49 +77,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-// const Login = () => {
-//     const [username, setUsername] = useState('');
-//     const [password, setPassword] = useState('');
-//     const [error, setError] = useState('');
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         // Implement your authentication logic here
-//         if (username === 'admin' && password === 'password') {
-//             alert('Login successful!');
-//             // Redirect to another page or set authentication state here
-//         } else {
-//             setError('Invalid username or password');
-//         }
-//     };
-
-//     return (
-//         <div className="login-container">
-//             <h2>Login</h2>
-//             <form onSubmit={handleSubmit}>
-//                 <div className="form-group">
-//                     <label>Username:</label>
-//                     <input
-//                         type="text"
-//                         value={username}
-//                         onChange={(e) => setUsername(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 <div className="form-group">
-//                     <label>Password:</label>
-//                     <input
-//                         type="password"
-//                         value={password}
-//                         onChange={(e) => setPassword(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 {error && <p className="error">{error}</p>}
-//                 <button type="submit">Login</button>
-//             </form>
-//         </div>
-//     );
-// };
-
-// export default Login;
