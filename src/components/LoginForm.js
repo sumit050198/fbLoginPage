@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginForm.css'; // Assuming you create a CSS file for styles
 
 const LoginForm = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Implement your authentication logic here
+        if (username === 'sumitpandey050198@gmail.com' && password === '123456789') {
+            alert('Login successful!');
+            // Redirect to another page or set authentication state here
+        } else {
+            setError('Invalid username or password');
+        }
+    };
     return (
         <div className="login-form">
             <div className="container-fluid bg-light">
                 <div className="container">
-                    <div className="row">
+                    <form className="row" onSubmit={handleSubmit}>
                         <div className="col-12 mt-5 d-flex flex-row justify-content-between">
                             <div className="left-col col-md-6 my-5">
                                 <h2 className="text-primary">facebook</h2>
@@ -16,24 +30,32 @@ const LoginForm = () => {
                             </div>
                             <div className="card shadow d-flex flex-column justify-content-center align-items-center">
                                 <div className="mt-4 input-container">
-                                    <input 
-                                        type="email" 
-                                        className="form-control" 
-                                        id="exampleInputEmail1" 
-                                        aria-describedby="emailHelp" 
-                                        placeholder="Email or phone number" 
+                                    <input
+                                        type="email"
+                                        value={username}
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="Email or phone number"
+                                        onChange={(e) => setUsername(e.target.value)}
+                                        required
                                     />
                                 </div>
                                 <div className="input-container">
-                                    <input 
-                                        type="password" 
-                                        className="form-control" 
-                                        id="exampleInputPassword1" 
-                                        placeholder="Password" 
+                                    <input
+                                        type="password"
+                                        value={password}
+                                        className="form-control"
+                                        id="exampleInputPassword1"
+                                        placeholder="Password"
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
                                     />
                                 </div>
-                                <button 
-                                    type="submit" 
+                                {error && <p className="error">{error}</p>}
+
+                                <button
+                                    type="submit"
                                     className="btn btn-primary login-button">
                                     Login
                                 </button>
@@ -41,14 +63,13 @@ const LoginForm = () => {
                                     <a href="/">Forget Password</a>
                                 </div>
                                 <hr className="mt-3 divider" />
-                                <button 
-                                    type="submit" 
-                                    className="btn text-white mt-2 mb-4 create-account-button">
-                                    Create new account
-                                </button>
+                                <div className="mb-4 create-account-button d-flex justify-content-center" style={{ background: '#42B72A', cursor: 'pointer' }}>
+                                    <p className="text-white mt-2 justify-content-cente align-items-center"> create account button</p>
+                                </div>
+                                {/* <button className="btn text-white mb-4 create-account-button" style={{ background: '#42B72A' }}> create-account-button</button> */}
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -56,57 +77,49 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+// const Login = () => {
+//     const [username, setUsername] = useState('');
+//     const [password, setPassword] = useState('');
+//     const [error, setError] = useState('');
 
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         // Implement your authentication logic here
+//         if (username === 'admin' && password === 'password') {
+//             alert('Login successful!');
+//             // Redirect to another page or set authentication state here
+//         } else {
+//             setError('Invalid username or password');
+//         }
+//     };
 
-{/* <footer className="container-fluid bg-white">
-                <div className="footer-langs container d-flex flex-column mt-5" style={{ fontSize: 12 }}>
-                    <ol className="d-flex flex-row justify-content-center align-items-center mt-5">
-                        <li>English (UK)</li>
-                        <li className="mx-4"><a href="/">मराठी</a></li>
-                        <li className="mx-4"><a href="/">हिन्दी</a></li>
-                        <li className="mx-4"><a href="/">اردو</a></li>
-                        <li className="mx-4"><a href="/">ગુજરાતી</a></li>
-                        <li className="mx-4"><a href="/">ಕನ್ನಡ</a></li>
-                        <li className="mx-4"><a href="/">ਪੰਜਾਬੀ</a></li>
-                        <li className="mx-4"><a href="/">தமிழ்</a></li>
-                        <li className="mx-4"><a href="/">বাংলা</a></li>
-                        <li className="mx-4"><a href="/">తెలుగు</a></li>
-                        <li className="mx-4"><a href="/">മലയാളം</a></li>
-                        <li><button>+</button></li>
-                    </ol>
-                    <ol className="d-flex flex-row align-items-center">
-                        <li><a href="/">Sign Up</a></li>
-                        <li className="mx-4"><a href="/">Log In</a></li>
-                        <li className="mx-4"><a href="/">Messenger</a></li>
-                        <li className="mx-4"><a href="/">Facebook Lite</a></li>
-                        <li className="mx-4"><a href="/">Video</a></li>
-                        <li className="mx-4"><a href="/">Places</a></li>
-                        <li className="mx-4"><a href="/">Games</a></li>
-                        <li className="mx-4"><a href="/">Marketplace</a></li>
-                        <li className="mx-4"><a href="/">Meta Pay</a></li>
-                        <li className="mx-4"><a href="/">Meta Store</a></li>
-                        <li className="mx-4"><a href="/">Meta Quest</a></li>
-                        <li className="mx-4"><a href="/">Imagine with Meta AI</a></li>
-                        <li className="mx-4"><a href="/">Instagram</a></li>
-                        <li className="mx-4"><a href="/">Threads</a></li>
-                        <li className="mx-4"><a href="/">Fundraisers</a></li>
-                        <li className="mx-4"><a href="/">Services</a></li>
-                        <li className="mx-4"><a href="/">Voting Information Centre</a></li>
-                        <li className="mx-4"><a href="/">Privacy Policy</a></li>
-                        <li className="mx-4"><a href="/">Privacy Centre</a></li>
-                        <li className="mx-4"><a href="/">Groups</a></li>
-                        <li className="mx-4"><a href="/">About</a></li>
-                        <li className="mx-4"><a href="/">Create ad</a></li>
-                        <li className="mx-4"><a href="/">Create Page</a></li>
-                        <li className="mx-4"><a href="/">Developers</a></li>
-                        <li className="mx-4"><a href="/">Careers</a></li>
-                        <li className="mx-4"><a href="/">Cookies</a></li>
-                        <li className="mx-4"><a href="/">AdChoices</a></li>
-                        <li className="mx-4"><a href="/">Terms</a></li>
-                        <li className="mx-4"><a href="/">Help</a></li>
-                        <li className="mx-4"><a href="/">Contact uploading and non-users</a></li>
-                    </ol>
-                    <small>Meta © 2024</small>
-                </div>
-            </footer> */}
+//     return (
+//         <div className="login-container">
+//             <h2>Login</h2>
+//             <form onSubmit={handleSubmit}>
+//                 <div className="form-group">
+//                     <label>Username:</label>
+//                     <input
+//                         type="text"
+//                         value={username}
+//                         onChange={(e) => setUsername(e.target.value)}
+//                         required
+//                     />
+//                 </div>
+//                 <div className="form-group">
+//                     <label>Password:</label>
+//                     <input
+//                         type="password"
+//                         value={password}
+//                         onChange={(e) => setPassword(e.target.value)}
+//                         required
+//                     />
+//                 </div>
+//                 {error && <p className="error">{error}</p>}
+//                 <button type="submit">Login</button>
+//             </form>
+//         </div>
+//     );
+// };
 
+// export default Login;

@@ -26,7 +26,7 @@
 .create-account-button {
     width: 15rem;
     height: 2.8rem;
-    background: #42B72A;
+    border-radius: 5px;
 }
 
 @media (max-width: 770px) {
